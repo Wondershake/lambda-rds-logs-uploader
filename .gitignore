@@ -1,0 +1,7 @@
+node_modules
+.env
+event.json
+s3-policy.json
+rds-policy.json
+assume-policy-document.json
+.lambda

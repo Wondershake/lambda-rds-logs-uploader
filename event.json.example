@@ -1,0 +1,5 @@
+{
+  "s3bucket": "your-bucket",
+  "s3prefix": "prefix/",
+  "instance": "db-instance-name"
+}
