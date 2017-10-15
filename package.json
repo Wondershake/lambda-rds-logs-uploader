@@ -5,7 +5,6 @@
   "description": "Upload RDS logs to S3.",
   "main": "index.js",
   "scripts": {
-    "deploy": "./deploy.sh",
     "local": "node-lambda run"
   },
   "repository": {
