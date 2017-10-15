@@ -13,12 +13,16 @@ npm install
 ## Create IAM Policies
 
 ```bash
+cp s3-policy.json.example s3-policy.json
+cp rds-policy.json.example rds-policy.json
+
 s3_policy_arn=$(
   aws iam create-policy \
     --policy-name AmazonS3LogsWriteAccess \
     --policy-document file://s3-policy.json \
     | jq -r ".Policy.Arn"
 )
+
 rds_policy_arn=$(
   aws iam create-policy \
     --policy-name AmazonRDSLogsAccess \
@@ -94,4 +98,24 @@ instance=db-instance-name
 aws events put-targets \
   --rule lambda-rds-logs-uploader-rule \
   --targets "$(. ./target-json-template.sh)"
+```
+
+# Run Locally
+
+Configure variables:
+
+```bash
+# Configure Environment Variables
+cp .env.example .env
+vi .env
+
+# Configure Event JSON
+cp event.json.example event.json
+vi event.json
+```
+
+Execute function locally.
+
+```bash
+npm run local
 ```
