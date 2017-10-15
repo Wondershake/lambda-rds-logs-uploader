@@ -21,7 +21,6 @@
     "node-lambda": "^0.11.4"
   },
   "dependencies": {
-    "aws-sdk": "^2.133.0",
-    "date-utils": "^1.2.21"
+    "aws-sdk": "^2.133.0"
   }
 }
